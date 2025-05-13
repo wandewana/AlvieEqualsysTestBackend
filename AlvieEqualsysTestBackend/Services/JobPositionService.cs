@@ -1,5 +1,6 @@
 ﻿using AlvieEqualsysTestBackend.Data;
 using AlvieEqualsysTestBackend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AlvieEqualsysTestBackend.Services
 {
