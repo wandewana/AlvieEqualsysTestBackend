@@ -15,7 +15,10 @@ namespace AlvieEqualsysTestBackend.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=employee.db");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlite("Data Source=employee.db");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
