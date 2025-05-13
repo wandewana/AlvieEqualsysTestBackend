@@ -1,6 +1,7 @@
 ﻿using AlvieEqualsysTestBackend.Data;
 using Microsoft.EntityFrameworkCore;
 using AlvieEqualsysTestBackend.Models;
+using AlvieEqualsysTestBackend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddSwaggerGen();
 // Register EF Core with SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=employee.db"));
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IJobPositionService, JobPositionService>();
 
 var app = builder.Build();
 
